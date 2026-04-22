@@ -1,0 +1,27 @@
+{
+  "name": "Laravel Codespace (MySQL)",
+  "image": "mcr.microsoft.com/devcontainers/php:8.2",
+
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/composer:1": {},
+    "ghcr.io/devcontainers/features/mysql:1": {
+      "version": "8.0"
+    }
+  },
+
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "postStartCommand": "bash .devcontainer/postStart.sh",
+
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": {
+      "label": "Laravel App",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  "remoteUser": "vscode"
+}
